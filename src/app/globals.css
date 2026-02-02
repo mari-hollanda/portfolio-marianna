@@ -133,3 +133,14 @@ a {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+.footer-icon {
+  @apply p-2 rounded-full border transition-all;
+  border-color: var(--border-soft);
+}
+
+.footer-icon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
