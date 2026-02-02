@@ -25,3 +25,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
+export const metadata = {
+  title: "Marianna Pedroso",
+  description: "Fullstack Developer",
+
+  icons: {
+    icon: "favicon.png",
+  },
+};

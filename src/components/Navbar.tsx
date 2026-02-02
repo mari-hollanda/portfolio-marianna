@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const links = [
   { name: "About", href: "#about" },
@@ -12,8 +11,12 @@ const links = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState<"EN" | "PT">("EN");
+
+  const toggleLang = () => {
+    setLang((prev) => (prev === "EN" ? "PT" : "EN"));
+  };
 
   return (
     <header className="sticky top-6 z-50 flex justify-center">
@@ -23,73 +26,72 @@ export default function Navbar() {
           px-6 py-3
           rounded-full
           flex items-center justify-between
-          
-          border
-          shadow-sm
-          
+          border shadow-sm
           backdrop-blur-md
         "
         style={{
           background: "rgba(255,255,255,0.6)",
           borderColor: "var(--border-soft)",
         }}>
-        {/* LOGO */}
-        <div className="font-semibold text-lg">Marianna Pedroso</div>
+        {/* LOGO + NAME */}
+        <Link href="#top" className="flex items-center gap-3 group">
+          <img
+            src="/favicon.png"
+            alt="Logo"
+            className="
+              w-7 h-7
+              rounded-full
+              object-cover
+              transition-transform
+              group-hover:scale-110
+            "
+          />
+
+          <span className="font-serif text-lg tracking-tight">
+            Marianna Pedroso
+          </span>
+        </Link>
 
         {/* DESKTOP LINKS */}
         <ul className="hidden md:flex gap-8 text-sm">
-          {links.map((link) => {
-            const active = pathname === link.href;
+          {links.map((link) => (
+            <li key={link.name} className="relative group">
+              <Link
+                href={link.href}
+                className="text-muted hover:text-black transition-colors">
+                {link.name}
+              </Link>
 
-            return (
-              <li key={link.name} className="relative group">
-                <Link
-                  href={link.href}
-                  className="transition-colors"
-                  style={{
-                    color: active ? "var(--text-main)" : "var(--text-muted)",
-                  }}>
-                  {link.name}
-                </Link>
-                <span
-                  className="
-                    absolute -bottom-1 left-0
-                    h-0.5 w-0
-                    transition-all duration-300
-                    group-hover:w-full
-                  "
-                  style={{ background: "var(--accent-hover)" }}
-                />
-                {active && (
-                  <span
-                    className="absolute -bottom-1 left-0 h-0.5 w-full"
-                    style={{ background: "var(--accent-hover)" }}
-                  />
-                )}
-              </li>
-            );
-          })}
+              <span
+                className="
+                  absolute -bottom-1 left-0
+                  h-0.5 w-0
+                  transition-all duration-300
+                  group-hover:w-full
+                "
+                style={{ background: "var(--accent)" }}
+              />
+            </li>
+          ))}
         </ul>
 
-        {/* DESKTOP BUTTON */}
+        {/* LANGUAGE TOGGLE */}
         <button
+          onClick={toggleLang}
           className="
             hidden md:block
             px-4 py-1.5
             rounded-full
-            border
-            text-sm
+            border text-sm
             transition-all
             hover:scale-105
             active:scale-95
           "
-          style={{
-            borderColor: "var(--text-main)",
-          }}>
-          Get in touch
+          style={{ borderColor: "var(--text-main)" }}>
+          {lang === "EN" ? "PT 🇧🇷" : "EN 🇺🇸"}
         </button>
 
-        {/* MOBILE BUTTON */}
+        {/* MOBILE MENU BUTTON */}
         <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
           ☰
         </button>
@@ -122,7 +124,9 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <button className="btn-primary w-full">Get in touch</button>
+          <button onClick={toggleLang} className="btn-primary w-full">
+            {lang === "EN" ? "Português 🇧🇷" : "English 🇺🇸"}
+          </button>
         </div>
       )}
     </header>
