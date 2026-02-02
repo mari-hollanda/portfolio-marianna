@@ -1,1 +1,135 @@
 @import "tailwindcss";
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+  --bg-main: #ffffff;
+  --bg-soft: #fafaf8;
+  --text-main: #111111;
+  --text-muted: #525252;
+  --border-soft: #e5e5e5;
+
+  --accent: #db2777;
+  --accent-hover: #be185d;
+}
+
+/* =========================
+   BASE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  line-height: 1.1;
+}
+h2 {
+  line-height: 1.2;
+}
+
+body,
+p,
+span,
+a {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.container-clean {
+  @apply max-w-6xl mx-auto px-6 md:px-10;
+}
+
+.section-padding {
+  @apply py-24;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-soft {
+  border-color: var(--border-soft);
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-lg text-white font-medium transition;
+  background: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-lg border transition;
+  border-color: var(--border-soft);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
