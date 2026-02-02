@@ -15,7 +15,13 @@ const playfair = Playfair_Display({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-br" className={`${inter.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+      <body className="relative min-h-screen">
+        <div
+          className="fixed inset-0 -z-50 bg-linear-to-br from-pink-300/70 via-white/0 to-purple-200/70 w-full h-full"
+          aria-hidden="true"
+        />
+        {children}
+      </body>
     </html>
   );
 }

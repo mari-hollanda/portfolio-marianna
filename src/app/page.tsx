@@ -1,11 +1,14 @@
+import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import About from "../components/About";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="h-screen flex items-center justify-center">
-        <h1 className="text-5xl font-serif">Hero aqui</h1>
+      <main>
+        <Hero />
+        <About />
       </main>
     </>
   );

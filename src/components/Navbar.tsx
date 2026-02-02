@@ -55,13 +55,16 @@ export default function Navbar() {
                   className="
                     absolute -bottom-1 left-0
                     h-0.5 w-0
-                    bg-black
                     transition-all duration-300
                     group-hover:w-full
                   "
+                  style={{ background: "var(--accent-hover)" }}
                 />
                 {active && (
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-black" />
+                  <span
+                    className="absolute -bottom-1 left-0 h-0.5 w-full"
+                    style={{ background: "var(--accent-hover)" }}
+                  />
                 )}
               </li>
             );
