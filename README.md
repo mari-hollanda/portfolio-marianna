@@ -3,7 +3,7 @@
 Personal portfolio built to showcase my work as a Fullstack Developer.
 
 Live site:  
-👉 https://your-link.vercel.app
+👉 www.mariannapedroso.com/
 
 ---
 
