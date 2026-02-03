@@ -1,27 +1,41 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Skills() {
+  const t = useTranslations("Skills");
+
+  const coreSkills = [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Tailwind",
+    "Prisma",
+    "REST APIs",
+  ];
+
+  const tools = ["Git", "GitHub", "Figma"];
+
   return (
     <section id="skills" className="section-padding">
       <div className="container-clean max-w-4xl text-center">
-        {/* CARD */}
         <div className="mt-12 bg-white/60 backdrop-blur-md border border-soft rounded-2xl p-10 space-y-10">
-          <span className="text-sm tracking-widest text-muted">EXPERTISE</span>
+          {/* LABEL */}
+          <span className="text-sm tracking-widest text-muted">
+            {t("label")}
+          </span>
 
-          <h2 className="text-4xl md:text-5xl mt-4">Skills & Stack</h2>
+          {/* TITLE */}
+          <h2 className="text-4xl md:text-5xl mt-4">{t("title")}</h2>
+
           {/* CORE */}
           <div className="space-y-4">
-            <h3 className="font-serif text-xl">Core</h3>
+            <h3 className="font-serif text-xl">{t("core")}</h3>
 
             <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "TypeScript",
-                "React",
-                "Next.js",
-                "Node.js",
-                "PostgreSQL",
-                "Tailwind",
-                "Prisma",
-                "REST APIs",
-              ].map((skill) => (
+              {coreSkills.map((skill) => (
                 <span
                   key={skill}
                   className="px-4 py-2 border border-soft rounded-full text-sm text-muted hover:text-(--accent) hover:border-(--accent) transition">
@@ -33,10 +47,10 @@ export default function Skills() {
 
           {/* TOOLS */}
           <div className="space-y-4">
-            <h3 className="font-serif text-xl">Tools</h3>
+            <h3 className="font-serif text-xl">{t("tools")}</h3>
 
             <div className="flex flex-wrap justify-center gap-3">
-              {["Git", "GitHub", "Figma"].map((tool) => (
+              {tools.map((tool) => (
                 <span
                   key={tool}
                   className="px-4 py-2 border border-soft rounded-full text-sm text-muted hover:text-(--accent) hover:border-(--accent) transition">

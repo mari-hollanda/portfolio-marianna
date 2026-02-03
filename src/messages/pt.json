@@ -1,0 +1,64 @@
+{
+  "Navbar": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Skills",
+    "contact": "Contato",
+    "language": "EN 🇺🇸"
+  },
+
+  "Hero": {
+    "greeting": "OLÁ, EU SOU",
+    "role": "Desenvolvedora Fullstack",
+    "description": "Eu projeto e desenvolvo aplicações web modernas do front-end ao back-end, com foco em performance, usabilidade e arquitetura limpa. Transformo ideias em produtos digitais escaláveis.",
+    "viewProjects": "Ver Projetos →",
+    "downloadCV": "Baixar CV ↓"
+  },
+
+  "About": {
+    "label": "SOBRE",
+    "title": "Um pouco sobre mim",
+    "p1": "Sou uma <highlight>desenvolvedora fullstack</highlight> que gosta de construir produtos de ponta a ponta, de interfaces intuitivas a arquiteturas back-end sólidas.",
+    "p2": "Meu foco é criar aplicações que não sejam apenas funcionais, mas agradáveis de usar. Performance, acessibilidade e código limpo são coisas com as quais realmente me importo.",
+    "p3": "Eu adoro transformar ideias em produtos reais e resolver problemas que impactam o dia a dia das pessoas. Estou sempre refinando meu workflow e aprendendo novas formas de construir.",
+    "p4": "Quando não estou programando, geralmente estou estudando novas tecnologias ou aprimorando meus projetos.",
+    "imageAlt": "Foto de Marianna Pedroso"
+  },
+
+  "Projects": {
+    "label": "PROJETOS",
+    "title": "Projetos Selecionados",
+    "live": "Demo",
+
+    "p1": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "p2": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "p3": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  },
+
+  "Skills": {
+    "label": "EXPERIÊNCIA",
+    "title": "Skills & Stack",
+    "core": "Tecnologias principais",
+    "tools": "Ferramentas"
+  },
+
+  "Contact": {
+    "label": "CONTATO",
+    "title": "Vamos conversar",
+    "description": "Estou sempre aberta a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua visão.",
+    "email": "Email"
+  },
+
+  "Footer": {
+    "rights": "Todos os direitos reservados."
+  }
+}

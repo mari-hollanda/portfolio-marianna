@@ -2,21 +2,27 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const links = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#work" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
-];
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "PT">("EN");
+
+  const t = useTranslations("Navbar");
+  const locale = useLocale();
+  const router = useRouter();
 
   const toggleLang = () => {
-    setLang((prev) => (prev === "EN" ? "PT" : "EN"));
+    const newLocale = locale === "en" ? "pt" : "en";
+    router.replace(`/${newLocale}`);
   };
+
+  const links = [
+    { label: t("about"), href: "#about" },
+    { label: t("projects"), href: "#work" },
+    { label: t("skills"), href: "#skills" },
+    { label: t("contact"), href: "#contact" },
+  ];
 
   return (
     <header className="sticky top-6 z-50 flex justify-center">
@@ -34,7 +40,7 @@ export default function Navbar() {
           borderColor: "var(--border-soft)",
         }}>
         {/* LOGO + NAME */}
-        <Link href="#top" className="flex items-center gap-3 group">
+        <Link href={`/${locale}`} className="flex items-center gap-3 group">
           <img
             src="/favicon.png"
             alt="Logo"
@@ -55,12 +61,12 @@ export default function Navbar() {
         {/* DESKTOP LINKS */}
         <ul className="hidden md:flex gap-8 text-sm">
           {links.map((link) => (
-            <li key={link.name} className="relative group">
-              <Link
+            <li key={link.href} className="relative group">
+              <a
                 href={link.href}
                 className="text-muted hover:text-black transition-colors">
-                {link.name}
-              </Link>
+                {link.label}
+              </a>
 
               <span
                 className="
@@ -75,7 +81,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* LANGUAGE TOGGLE */}
+        {/* LANGUAGE BUTTON */}
         <button
           onClick={toggleLang}
           className="
@@ -88,10 +94,10 @@ export default function Navbar() {
             active:scale-95
           "
           style={{ borderColor: "var(--text-main)" }}>
-          {lang === "EN" ? "PT 🇧🇷" : "EN 🇺🇸"}
+          {t("language")}
         </button>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE BUTTON */}
         <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
           ☰
         </button>
@@ -115,17 +121,17 @@ export default function Navbar() {
             border: "1px solid var(--border-soft)",
           }}>
           {links.map((link) => (
-            <Link
-              key={link.name}
+            <a
+              key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="text-lg">
-              {link.name}
-            </Link>
+              {link.label}
+            </a>
           ))}
 
           <button onClick={toggleLang} className="btn-primary w-full">
-            {lang === "EN" ? "Português 🇧🇷" : "English 🇺🇸"}
+            {t("language")}
           </button>
         </div>
       )}

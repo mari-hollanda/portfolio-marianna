@@ -2,6 +2,7 @@
 
 import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 function ContactItem({
   icon: Icon,
@@ -30,64 +31,48 @@ function ContactItem({
         border-b border-(--border-soft)
       ">
       <div className="flex items-center gap-5">
-        {/* ICON BOX */}
-        <div
-          className="
-            w-11 h-11
-            flex items-center justify-center
-            rounded-xl
-            border border-(--border-soft)
-            bg-white
-            shadow-sm
-          ">
+        <div className="w-11 h-11 flex items-center justify-center rounded-xl border border-(--border-soft) bg-white shadow-sm">
           <Icon size={18} />
         </div>
 
-        {/* TEXT */}
         <div>
           <p className="text-sm text-muted">{label}</p>
           <p className="font-medium">{value}</p>
         </div>
       </div>
 
-      {/* ARROW */}
       <ArrowUpRight
         size={18}
-        className="
-          text-muted
-          group-hover:text-(--accent)
-          transition
-        "
+        className="text-muted group-hover:text-(--accent) transition"
       />
     </motion.a>
   );
 }
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+
   return (
-    <section className="container-clean pt-12 pb-20">
+    <section id="contact" className="container-clean pt-12 pb-20">
       <div className="max-w-3xl mx-auto">
         {/* LABEL */}
         <span className="text-sm tracking-[0.25em] text-(--accent)">
-          CONTACT
+          {t("label")}
         </span>
 
         {/* TITLE */}
         <h2 className="text-4xl md:text-5xl font-semibold mt-3 mb-6">
-          Let's connect
+          {t("title")}
         </h2>
 
         {/* SUBTEXT */}
-        <p className="text-muted mb-12 max-w-xl">
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision.
-        </p>
+        <p className="text-muted mb-12 max-w-xl">{t("description")}</p>
 
         {/* CONTACT LIST */}
         <div>
           <ContactItem
             icon={Mail}
-            label="Email"
+            label={t("email")}
             value="mariannacpedroso@gmail.com"
             href="mailto:mariannacpedroso@gmail.com"
           />

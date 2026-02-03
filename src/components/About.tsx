@@ -1,19 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function About() {
+  const t = useTranslations("About");
+
   return (
     <section id="about" className="bg-(--bg-soft) py-24">
       <div className="container-clean max-w-5xl">
         {/* LABEL */}
-        <span className="text-xs tracking-[0.3em] text-(--accent)">ABOUT</span>
+        <span className="text-xs tracking-[0.3em] text-(--accent)">
+          {t("label")}
+        </span>
 
         {/* TITLE */}
         <h2 className="text-4xl md:text-5xl font-semibold mt-4 mb-6">
-          A bit about me
+          {t("title")}
         </h2>
-        <span className=" block w-24 h-0.5 bg-linear-to-r from-(--accent) to-transparent mb-16" />
+
+        <span className="block w-24 h-0.5 bg-linear-to-r from-(--accent) to-transparent mb-16" />
+
         {/* GRID */}
         <div className="grid md:grid-cols-[140px_1fr] gap-12 items-start">
           {/* PHOTO */}
@@ -30,7 +37,7 @@ export default function About() {
             ">
             <img
               src="/marianna.png"
-              alt="Marianna"
+              alt={t("imageAlt")}
               className="w-full h-auto object-cover"
             />
           </motion.div>
@@ -43,30 +50,18 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-7 text-muted leading-relaxed text-lg">
             <p>
-              I'm a{" "}
-              <span className="text-(--text-main) font-medium">
-                fullstack developer
-              </span>{" "}
-              who enjoys building products end-to-end — from intuitive
-              interfaces to solid back-end architecture.
+              {t.rich("p1", {
+                highlight: (chunks) => (
+                  <span className="text-(--text-main) font-medium">
+                    {chunks}
+                  </span>
+                ),
+              })}
             </p>
 
-            <p>
-              My focus is creating applications that are not only functional,
-              but pleasant to use. Performance, accessibility and clean code are
-              things I genuinely care about.
-            </p>
-
-            <p>
-              I love turning ideas into real products and solving problems that
-              impact people’s daily lives. I'm always refining my workflow and
-              learning better ways to build.
-            </p>
-
-            <p>
-              When I'm not coding, I'm usually studying new tech or polishing my
-              projects.
-            </p>
+            <p>{t("p2")}</p>
+            <p>{t("p3")}</p>
+            <p>{t("p4")}</p>
           </motion.div>
         </div>
       </div>

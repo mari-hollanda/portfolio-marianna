@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center w-full">
       <div className="container-clean section-padding grid lg:grid-cols-2 gap-16 items-center mx-auto">
@@ -13,7 +16,7 @@ export default function Hero() {
           transition={{ duration: 0.9 }}
           className="space-y-6">
           <span className="text-sm tracking-[0.3em] text-muted">
-            HELLO, I'M
+            {t("greeting")}
           </span>
 
           <h1 className="text-5xl md:text-6xl font-semibold leading-[1.05] mt-6">
@@ -21,25 +24,23 @@ export default function Hero() {
           </h1>
 
           <h2 className="text-xl md:text-2xl font-medium text-(--accent)">
-            Fullstack Developer
+            {t("role")}
           </h2>
 
           <p className="text-muted max-w-xl leading-relaxed text-lg">
-            I design and develop modern web applications from front-end to
-            back-end, focusing on performance, usability and clean architecture.
-            I turn ideas into scalable digital products.
+            {t("description")}
           </p>
 
           <div className="flex gap-5 pt-4">
             <a href="#projects" className="btn-primary">
-              View Projects →
+              {t("viewProjects")}
             </a>
 
             <a
               href="/cv-marianna.pdf"
               download
               className="btn-secondary flex items-center gap-2">
-              Download CV ↓
+              {t("downloadCV")}
             </a>
           </div>
         </motion.div>
@@ -52,6 +53,7 @@ export default function Hero() {
           className="flex justify-center lg:justify-end">
           <div className="relative">
             <div className="absolute inset-0 bg-pink-300/20 blur-3xl rounded-full scale-110" />
+
             <div
               className="
                 relative

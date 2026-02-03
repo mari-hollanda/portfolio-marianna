@@ -1,0 +1,65 @@
+{
+  "Navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "language": "PT 🇧🇷"
+  },
+
+  "Hero": {
+    "greeting": "HELLO, I'M",
+    "role": "Fullstack Developer",
+    "description": "I design and develop modern web applications from front-end to back-end, focusing on performance, usability and clean architecture. I turn ideas into scalable digital products.",
+    "viewProjects": "View Projects →",
+    "downloadCV": "Download CV ↓"
+  },
+
+  "About": {
+    "label": "ABOUT",
+    "title": "A bit about me",
+    "p1": "I'm a <highlight>fullstack developer</highlight> who enjoys building products end-to-end, from intuitive interfaces to solid back-end architecture.",
+    "p2": "My focus is creating applications that are not only functional, but pleasant to use. Performance, accessibility and clean code are things I genuinely care about.",
+    "p3": "I love turning ideas into real products and solving problems that impact people’s daily lives. I'm always refining my workflow and learning better ways to build.",
+    "p4": "When I'm not coding, I'm usually studying new tech or polishing my projects.",
+
+    "imageAlt": "Photo of Marianna Pedroso"
+  },
+
+  "Projects": {
+    "label": "PROJECTS",
+    "title": "Selected Work",
+    "live": "Live Demo",
+
+    "p1": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "p2": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "p3": {
+      "title": "Lorem Ipsum",
+      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  },
+
+  "Skills": {
+    "label": "EXPERTISE",
+    "title": "Skills & Stack",
+    "core": "Core",
+    "tools": "Tools"
+  },
+
+  "Contact": {
+    "label": "CONTACT",
+    "title": "Let's connect",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "email": "Email"
+  },
+
+  "Footer": {
+    "rights": "All rights reserved."
+  }
+}

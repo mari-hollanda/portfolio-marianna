@@ -12,25 +12,26 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
+export const metadata = {
+  title: "Marianna Pedroso",
+  description: "Fullstack Developer",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-br" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="relative min-h-screen">
+        {/* BACKGROUND GRADIENT GLOBAL */}
         <div
-          className="fixed inset-0 -z-50 bg-linear-to-br from-pink-300/70 via-white/0 to-purple-200/70 w-full h-full"
+          className="fixed inset-0 -z-50 bg-linear-to-br from-pink-300/70 via-white/0 to-purple-200/70"
           aria-hidden="true"
         />
+
         {children}
       </body>
     </html>
   );
 }
-
-export const metadata = {
-  title: "Marianna Pedroso",
-  description: "Fullstack Developer",
-
-  icons: {
-    icon: "favicon.png",
-  },
-};
