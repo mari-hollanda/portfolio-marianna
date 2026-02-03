@@ -32,16 +32,16 @@
     "live": "Live Demo",
 
     "p1": {
-      "title": "Lorem Ipsum",
-      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Sweet Bakery Run!",
+      "desc": "Collect ingredients and run away from the rats!"
     },
     "p2": {
-      "title": "Lorem Ipsum",
-      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Tutor AI",
+      "desc": "Intelligent education system that uses AI to generate personalized exercises and explain concepts."
     },
     "p3": {
-      "title": "Lorem Ipsum",
-      "desc": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
+      "title": "Login Page",
+      "desc": "This is a simple front-end for user authentication."
     }
   },
 
