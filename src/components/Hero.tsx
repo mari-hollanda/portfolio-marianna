@@ -37,7 +37,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/cv-marianna.pdf"
+              href="/cv-mariannapedroso.pdf"
               download
               className="btn-secondary flex items-center gap-2">
               {t("downloadCV")}
